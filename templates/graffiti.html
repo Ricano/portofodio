@@ -1,0 +1,71 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Wall</title>
+    <link rel="stylesheet" href="{% static 'graffiti/css/styles.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header class="header">
+    <a href="#" class="logo">The Wall</a>
+
+
+    <div class="instructions">Press and hold where you want your message</div>
+</header>
+
+<div id="graffiti-wall">
+</div>
+
+<div class="graffitis">
+    {% for graffiti in graffiti_list %}
+        <div class="graffiti"
+             style="transform: rotate({{ graffiti.rotation }}deg);left: {{ graffiti.location_x }}px; top: {{ graffiti.location_y }}px; font-family: {{ graffiti.font }};">
+            <p style="background:  radial-gradient(#ffffff, {{ graffiti.color }});-webkit-text-fill-color: transparent; -webkit-background-clip: text;">{{ graffiti.text }}</p>
+            <div id="graffiti-date"
+                 style=" background:  radial-gradient(#ffffff, {{ graffiti.color }});-webkit-text-fill-color: transparent; -webkit-background-clip: text;">{{ graffiti.created }}</div>
+            <div id="graffiti-author"
+                 style=" background:  radial-gradient(#ffffff, {{ graffiti.color }});-webkit-text-fill-color: transparent; -webkit-background-clip: text;">{{ graffiti.author }}</div>
+        </div>
+    {% endfor %}
+</div>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+
+        <div class="modal-body">
+            <form action="/graffiti" method="post" id="graffiti-form">
+                {% csrf_token %}
+                <div id="text-counter">64/64</div>
+
+                {{ form }}
+                <input type="color" id="color" name="color" value="#a430d9">
+                <input type="range" id="rotation" name="rotation" min="-23" max="23" value="0" class="slider">
+                <ul id="error-message"></ul>
+            </form>
+
+
+            <!-- External button-->
+            <button id="submit-btn" type="submit" form="graffiti-form"> OK</button>
+
+
+        </div>
+    </div>
+
+</div>
+<div id="edge-warning">
+    <h3>You're On The Edge</h3>
+
+    <p>Choose a spot not so close to the edge of the screen</p>
+</div>
+<script src="{% static "graffiti/js/graffiti.js" %}"></script>
+
+</body>
+</html>
+
+

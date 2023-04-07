@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block main %}
+
+    <div onclick="create()" class="btn" id="create-btn">Create</div>
+
+    <header class="header">
+        <a href="#" class="logo">"THIS IS INTERNET"</a>
+        <i class="bx bx-menu" id="menu-icon"></i>
+
+
+        <nav class="navbar">
+            <a class="header-link active" href="#home">home</a>
+            <a class="header-link" href="#about">about</a>
+            <a class="header-link" href="#services">services</a>
+            <a class="header-link" href="#portfolio">stuff</a>
+            <a class="header-link" href="#contact">contact</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Greetings</h3>
+            <h1>R Caetano</h1>
+            <h3>And I do <span class="multiple-text"></span></h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto aut cupiditate ea ipsa
+                laborum
+                nisi non odio optio quae, quisquam quo repudiandae rerum saepe sint suscipit unde vel. Quidem.</p>
+            <div class="social-media">
+                <a target="_blank" href="https://github.com/Ricano">
+                    <i class='bx bxl-github'></i>
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/ricardo-filipe-caetano/">
+                    <i class='bx bxl-linkedin'></i>
+                </a>
+            </div>
+            <a onclick="kaboom()" class="btn">Destroy</a>
+        </div>
+        <div class="photo">
+            <img id="my-photo"
+                 src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2011/11/square-format-01.jpg?resize=600%2C600&ssl=1"
+                 alt="My photo">
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img">
+            <img src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2011/11/square-format-01.jpg?resize=600%2C600&ssl=1"
+                 alt="My photo">
+        </div>
+        <div class="about-content">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Developer</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deleniti eius facilis laboriosam libero,
+                quos ratione tempora velit. A corporis deleniti facilis maxime placeat qui quos saepe sunt, unde
+                voluptatibus.
+            </p>
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2 class="heading">My <span>Services</span></h2>
+
+        <div class="services-container">
+            <div class="services-box">
+                <i class="bx bx-code-alt"></i>
+                <h3>Web Development</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, explicabo modi nemo optio quaerat
+                    sed
+                    veniam! Aliquid, consequuntur debitis dolorem est et illo nemo, nostrum perspiciatis quia ratione
+                    ullam
+                    voluptatibus.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+                <i class="bx bxs-paint"></i>
+                <h3>Graphic Design</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, explicabo modi nemo optio quaerat
+                    sed
+                    veniam! Aliquid, consequuntur debitis dolorem est et illo nemo, nostrum perspiciatis quia ratione
+                    ullam
+                    voluptatibus.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+            <div class="services-box">
+                <i class="bx bx-bar-chart-alt"></i>
+                <h3>Digital Marketing</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, explicabo modi nemo optio quaerat
+                    sed
+                    veniam! Aliquid, consequuntur debitis dolorem est et illo nemo, nostrum perspiciatis quia ratione
+                    ullam
+                    voluptatibus.</p>
+                <a href="#" class="btn">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">amazing <span>stuff</span></h2>
+
+        <div class="portfolio-container">
+            {% for project in projects %}
+                <div class="portfolio-title">
+                    <h4>{{ project.title }}</h4>
+                    <div class="portfolio-tech-links">
+                        {% for link in project.techlink_set.all %}
+                            <a target="_blank" href="{{ link.text }}">
+                                <i class="{{ link.icon }}"></i>
+                            </a>
+
+                        {% endfor %}
+
+                    </div>
+                </div>
+
+                <div class="portfolio-box">
+
+                    <img src="{{ project.image_link }}"
+                         alt="{{ project.title }} image">
+
+                    <div class="portfolio-layer">
+
+                        <p class="portfolio-resume">
+                            {{ project.resume }}
+                        </p>
+                        <p class="portfolio-description">
+                            {{ project.description }}
+                        </p>
+                        <a class="btn" target="_blank" href={{ project.link }}>check it out
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+
+            {% endfor %}
+
+
+        </div>
+
+
+    </section>
+
+    <section class=" contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span></h2>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Send Message" class="btn">
+
+        </form>
+
+    </section>
+    <footer class="footer">
+        <div class="footer-text">
+            <p>
+                Copyright &copy; {{ year }} by RCaetano | All Rights Reserved.
+            </p>
+        </div>
+        <div class="footer-iconTop">
+            <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+
+        </div>
+    </footer>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.0.14/dist/typed.umd.js"></script>
+    <script src="{% static 'main/js/main.js' %}"></script>
+    <script src="{% static 'main/js/photo.js' %}"></script>
+    <script>
+        let logo = document.querySelector(".logo")
+
+        setInterval(() => {
+            logo.innerHTML = Date.now().toString();
+
+
+        }, 113)
+
+    </script>
+{% endblock %}

@@ -1,0 +1,413 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Bungee+Shade&family=Fascinate&family=Press+Start+2P&family=Creepster&family=Emilys+Candy&family=Gruppo&family=Henny+Penny&family=Monoton&family=Permanent+Marker&family=Rye&display=swap&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+    font-family: "Another";
+    src: url("/static/fonts/aAnotherTag.ttf") format("truetype");
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+
+:root {
+    --my-black: #181818;
+    --my-darker_blue: #002439;
+    --my-dark-blue: #005066;
+    --my-grey: #4e7988;
+    --my-light-blue: #78cce2;
+    --my-white: #e4eff0;
+}
+
+html {
+    font-size: 60%;
+    cursor: default;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    color: var(--my-white);
+    /*glassy look*/
+    background: rgba(255, 255, 255, 0.16);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+
+}
+
+@media (max-width: 768px) {
+    /* adjust the breakpoint as needed */
+    .header {
+        display: flex;
+        padding: 2rem 1rem;
+        border-right: 1px solid rgba(255, 255, 255, 0.6);
+        border-radius: 10px;
+        width: auto;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: center;
+    }
+
+    .header div {
+        font-size: 1.6rem;
+    }
+
+
+
+}
+
+
+.logo {
+    font-size: 3rem;
+    color: var(--my-white);
+    font-weight: 600;
+    cursor: default;
+}
+
+
+.instructions {
+    font-size: 2.5rem;
+    color: var(--my-white);
+    margin-left: 4rem;
+    transition: .3s;
+}
+
+/* prevent adjustments of font size after orientation changes in IE and iOS */
+#graffiti-wall {
+    height: 1000vh;
+    width: 4247px;
+    background-image: url("/static/images/brick.png");
+}
+
+.graffiti {
+    position: absolute;
+    background-color: transparent;
+    transform-origin: center;
+
+
+}
+
+#graffiti-date {
+    text-align: right;
+    /*word-wrap: break-word;*/
+    /*white-space: pre-wrap;*/
+    /*word-break: break-word;*/
+    font-family: 'Permanent Marker', cursive;
+    font-size: 20px;
+
+
+}
+
+#graffiti-author {
+    text-align: right;
+    /*word-wrap: break-word;*/
+    /*white-space: pre-wrap;*/
+    /*word-break: break-word;*/
+    font-family: 'Permanent Marker', cursive;
+    font-size: 30px;
+    margin-top: -1.1rem;
+
+}
+
+.graffiti p {
+    font-size: 50px;
+    white-space: pre-wrap;
+    max-width: 460px;
+    line-height: 1.2;
+
+
+    /*word-wrap: break-word;*/
+    /*white-space: pre-wrap;*/
+    /*word-break: break-word;*/
+}
+
+#edge-warning {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    color: var(--my-white);
+    height: 100%;
+    width: 100%;
+    font-size: 6rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+}
+
+#edge-warning p {
+    font-size: 3rem;
+}
+
+/* #### GRAFFITTI #### START ##### */
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 2rem;
+    animation-name: modal-appear;
+    animation-duration: 0.5s;
+    background: transparent;
+    max-width: 90%; /* optional */
+    max-height: 90%; /* optional */
+}
+
+@media (min-width: 768px) {
+    /* adjust the breakpoint as needed */
+    .modal-content {
+        max-width: 50%;
+        max-height: 50%;
+    }
+}
+
+#graffiti-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+
+#id_author {
+    background: transparent;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid var(--my-white);
+    padding: 0.6rem;
+    color: var(--my-white);
+    font-size: 1.7rem;
+    margin-bottom: 4rem;
+    width: 100%;
+
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--my-white);
+    opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--my-white);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--my-white);
+}
+
+#id_font {
+    appearance: none;
+    width: 100%;
+    border-bottom: 2px solid var(--my-white);
+    padding: 0.25em 0.5em;
+    cursor: pointer;
+    line-height: 1.1;
+    background-color: transparent;
+    color: var(--my-white);
+    font-size: 1.7rem;
+    margin-bottom: 4rem;
+
+}
+
+option {
+    background-color: black;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+    border: none;
+}
+
+
+textarea {
+    resize: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5rem;
+    border-radius: 10px;
+    color: var(--my-white);
+    background: transparent;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 2.7rem;
+    border: 1px solid var(--my-white);
+    margin-bottom: 7rem;
+    max-width: 36rem;
+
+
+}
+
+#text-counter {
+    margin-bottom: 1.6rem;
+    visibility: hidden;
+
+
+}
+
+#color {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-bottom: 4rem;
+}
+
+#color::-webkit-color-swatch {
+    border-radius: 15px;
+    border: none;
+}
+
+#color::-moz-color-swatch {
+    border-radius: 15px;
+    border: none;
+}
+
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 18px 0;
+    width: 100%;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
+    background: var(--my-white);
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -14px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: var(--my-white);
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: var(--my-white);
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: var(--my-white);
+    border: 1px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: var(--my-white);
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
+}
+
+input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0 0 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: var(--my-white);
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: var(--my-white);
+}
+
+#submit-btn {
+    color: var(--my-white);
+    margin-top: 3rem;
+    width: 100%;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid var(--my-white);
+
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* #### GRAFFITTI #### END ##### */
