@@ -20,12 +20,15 @@ class TechLink(models.Model):
 
 
 class Contact(models.Model):
-    email = models.EmailField()
-    message = models.TextField(max_length=1024)
+    email = models.EmailField(verbose_name=" your email")
+    message = models.TextField(verbose_name=" message", max_length=1024)
     created_at = models.DateTimeField(auto_now_add=True)
 
 
 class ContactForm(forms.ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.label_suffix = ""  # Removes : as label suffix
     class Meta:
         model = Contact
         fields = ('email', 'message')
