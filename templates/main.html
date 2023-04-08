@@ -11,8 +11,6 @@
 
         <nav class="navbar">
             <a class="header-link active" href="#home">home</a>
-            <a class="header-link" href="#about">about</a>
-            <a class="header-link" href="#services">services</a>
             <a class="header-link" href="#portfolio">stuff</a>
             <a class="header-link" href="#contact">contact</a>
         </nav>
@@ -40,60 +38,6 @@
             <img id="my-photo"
                  src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2011/11/square-format-01.jpg?resize=600%2C600&ssl=1"
                  alt="My photo">
-        </div>
-    </section>
-
-    <section class="about" id="about">
-        <div class="about-img">
-            <img src="https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2011/11/square-format-01.jpg?resize=600%2C600&ssl=1"
-                 alt="My photo">
-        </div>
-        <div class="about-content">
-            <h2 class="heading">About <span>Me</span></h2>
-            <h3>Developer</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deleniti eius facilis laboriosam libero,
-                quos ratione tempora velit. A corporis deleniti facilis maxime placeat qui quos saepe sunt, unde
-                voluptatibus.
-            </p>
-            <a href="#" class="btn">Read More</a>
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <h2 class="heading">My <span>Services</span></h2>
-
-        <div class="services-container">
-            <div class="services-box">
-                <i class="bx bx-code-alt"></i>
-                <h3>Web Development</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, explicabo modi nemo optio quaerat
-                    sed
-                    veniam! Aliquid, consequuntur debitis dolorem est et illo nemo, nostrum perspiciatis quia ratione
-                    ullam
-                    voluptatibus.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
-            <div class="services-box">
-                <i class="bx bxs-paint"></i>
-                <h3>Graphic Design</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, explicabo modi nemo optio quaerat
-                    sed
-                    veniam! Aliquid, consequuntur debitis dolorem est et illo nemo, nostrum perspiciatis quia ratione
-                    ullam
-                    voluptatibus.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
-            <div class="services-box">
-                <i class="bx bx-bar-chart-alt"></i>
-                <h3>Digital Marketing</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, explicabo modi nemo optio quaerat
-                    sed
-                    veniam! Aliquid, consequuntur debitis dolorem est et illo nemo, nostrum perspiciatis quia ratione
-                    ullam
-                    voluptatibus.</p>
-                <a href="#" class="btn">Read More</a>
-            </div>
         </div>
     </section>
 
@@ -167,18 +111,18 @@
 
         </div>
     </footer>
+
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/typed.js@2.0.14/dist/typed.umd.js"></script>
     <script src="{% static 'main/js/main.js' %}"></script>
     <script src="{% static 'main/js/photo.js' %}"></script>
+
     <script>
         let logo = document.querySelector(".logo")
 
         setInterval(() => {
             logo.innerHTML = Date.now().toString();
-
-
         }, 113)
-
     </script>
+
 {% endblock %}

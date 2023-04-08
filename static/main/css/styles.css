@@ -153,6 +153,12 @@ span {
     box-shadow: 0 0 1rem var(--my-light-blue);
 }
 
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+}
+
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
@@ -181,82 +187,6 @@ span {
     background: lightgreen;
     color: var(--my-dark-blue);
 
-}
-
-.about {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    background: var(--my-grey);
-}
-
-.about-img img {
-    width: 35vw;
-}
-
-.heading {
-    text-align: center;
-    font-size: 4.5rem;
-}
-
-.about-content {
-    text-align: left;
-}
-
-.about-content h2 {
-    text-align: left;
-    line-height: 1.2;
-}
-
-.about-content h3 {
-    font-size: 2.6rem;
-}
-
-.about-content p {
-    font-size: 1.6rem;
-    margin: 2rem 0 3rem;
-}
-
-.services h2 {
-    margin-bottom: 5rem;
-}
-
-.services-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.services-container .services-box {
-    flex: 1 1 30rem;
-    background: var(--my-grey);
-    padding: 3rem 2rem 4rem;
-    border-radius: 2rem;
-    text-align: center;
-    border: .2rem solid var(--my-black);
-    transition: .5s ease;
-}
-
-.services-container .services-box:hover {
-    border-color: var(--my-light-blue);
-    transform: scale(1.02);
-}
-
-.services-box i {
-    font-size: 7rem;
-    color: var(--my-light-blue);
-}
-
-.services-box h3 {
-    font-size: 2.6rem;
-}
-
-.services-box p {
-    font-size: 1.6rem;
-    margin: 1rem 0 3rem;
 }
 
 
