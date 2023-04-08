@@ -2,7 +2,7 @@ from django.db.transaction import atomic
 from django.http import HttpResponseRedirect, JsonResponse
 from django.views.generic import TemplateView
 
-from graffiti.models import Graffiti, GraffitiForm, Author
+from apps.graffiti.models import Graffiti, GraffitiForm, Author
 
 
 
@@ -35,7 +35,7 @@ class GraffitiView(TemplateView):
             errors = form.errors.as_json()
             return JsonResponse({"errors": errors})
 
-    def delete(self, *args):
-        Graffiti.objects.all().delete()
-        return HttpResponseRedirect("/graffiti")
+    # def delete(self, *args):
+    #     Graffiti.objects.all().delete()
+    #     return HttpResponseRedirect("/graffiti")
 

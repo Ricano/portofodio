@@ -11,14 +11,14 @@
 
         <nav class="navbar">
             <a class="header-link active" href="#home">home</a>
-            <a class="header-link" href="#portfolio">stuff</a>
+            <a class="header-link" href="#stuff">stuff</a>
             <a class="header-link" href="#contact">contact</a>
         </nav>
     </header>
 
     <section class="home" id="home">
         <div class="home-content">
-            <h3>Greetings</h3>
+            <h3>...</h3>
             <h1>R Caetano</h1>
             <h3>And I do <span class="multiple-text"></span></h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto aut cupiditate ea ipsa
@@ -41,35 +41,39 @@
         </div>
     </section>
 
-    <section class="portfolio" id="portfolio">
+    <section class="stuff" id="stuff">
         <h2 class="heading">amazing <span>stuff</span></h2>
+        {% for project in projects %}
 
-        <div class="portfolio-container">
-            {% for project in projects %}
-                <div class="portfolio-title">
+            <div class="stuff-container">
+                <div class="stuff-title">
                     <h4>{{ project.title }}</h4>
-                    <div class="portfolio-tech-links">
-                        {% for link in project.techlink_set.all %}
-                            <a target="_blank" href="{{ link.text }}">
-                                <i class="{{ link.icon }}"></i>
-                            </a>
-
-                        {% endfor %}
-
-                    </div>
+{#                    <div class="stuff-tech-links">#}
+{#                        {% for link in project.tech_links.all %}#}
+{#                            <a target="_blank" href="{{ link.text }}">#}
+{#                                <svg xmlns="http://www.w3.org/2000/svg" width="36" viewBox="0 0 24 24"#}
+{#                                     style="fill: rgba(200, 0, 0, 1);transform: ;msFilter:;">#}
+{#                                    <path d="{{ link.icon }}"></path>#}
+{##}
+{#                                </svg>#}
+{##}
+{##}
+{#                            </a>#}
+{#                        {% endfor %}#}
+{#                    </div>#}
                 </div>
 
-                <div class="portfolio-box">
+                <div class="stuff-box">
 
                     <img src="{{ project.image_link }}"
                          alt="{{ project.title }} image">
 
-                    <div class="portfolio-layer">
+                    <div class="stuff-layer">
 
-                        <p class="portfolio-resume">
+                        <p class="stuff-resume">
                             {{ project.resume }}
                         </p>
-                        <p class="portfolio-description">
+                        <p class="stuff-description">
                             {{ project.description }}
                         </p>
                         <a class="btn" target="_blank" href={{ project.link }}>check it out
@@ -81,21 +85,19 @@
                 </div>
 
 
-            {% endfor %}
-
-
-        </div>
+            </div>
+        {% endfor %}
 
 
     </section>
 
-    <section class=" contact" id="contact">
+    <section class="contact" id="contact">
         <h2 class="heading">contact <span>me</span></h2>
 
         <form action="" method="post">
             {% csrf_token %}
             {{ form }}
-            <input type="submit" value="Send Message" class="btn">
+            <input type="submit" value="send" class="btn">
 
         </form>
 

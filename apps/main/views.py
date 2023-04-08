@@ -5,7 +5,7 @@ from django.utils import timezone
 from django.views.generic import TemplateView
 from pytube import YouTube
 
-from main.models import ContactForm, Project
+from apps.main.models import ContactForm, Project
 
 
 class MainView(TemplateView):
@@ -34,12 +34,3 @@ class MainView(TemplateView):
             errors = form.errors.as_json()
             return JsonResponse({"errors": errors})
 
-
-
-class YoutubeView(TemplateView):
-    template_name = "youtube.html"
-
-    def post(self, request):
-        link = request.POST.get("text")
-        video = YouTube(link).streams.get_highest_resolution().download(".")
-        return self.render_to_response({"link": video.title})

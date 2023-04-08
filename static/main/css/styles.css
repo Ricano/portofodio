@@ -16,7 +16,8 @@
 :root {
     --my-black: #1e060c;
     --my-white: #fdf5f7;
-    --my-magenta: #BB2649
+    --my-magenta: #BB2649;
+    --my-green: #88b04b;
 
 }
 
@@ -162,7 +163,6 @@ span {
     padding: 1rem 2.8rem;
     background: var(--my-magenta);
     border-radius: 4rem;
-    box-shadow: 0 0 1rem var(--my-magenta);
     font-size: 1.6rem;
     color: var(--my-white);
     letter-spacing: .1rem;
@@ -182,58 +182,69 @@ span {
     top: 50%;
     left: 50%;
     z-index: 10;
-    background: lightgreen;
-    color: var(--my-white);
+    background: var(--my-green);
+    color: var(--my-magenta);
 
 }
 
 
-.portfolio {
+.stuff {
     background: var(--my-white);
     color: var(--my-black);
+    padding: 2rem;
 
 }
 
-.portfolio h2 {
-    margin: 4rem;
+.stuff h2 {
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    height: 10vh;
+
 }
 
-
-.portfolio-container {
+.stuff-container {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 10vh;
+    margin-bottom: 10vh;
+    padding: 4rem;
 }
 
+.stuff-container:nth-child(3) {
+    flex-direction: row-reverse;
+    background-color: var(--my-magenta);
+}
 
-.portfolio-box {
+.stuff-box {
     position: relative;
     border-radius: 2rem;
     box-shadow: 0 0 1rem var(--my-black);
     overflow: hidden;
     display: flex;
-    max-height: 50vh;
-    max-width: 50vw;
-    margin-bottom: 4rem;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+
 }
 
-.portfolio-box img {
+.stuff-box img {
     width: 100%;
     transition: .5s ease;
+
+
 }
 
-.portfolio-box:hover img {
+.stuff-box:hover img {
     transform: scale(1.1);
 }
 
-.portfolio-layer {
+.stuff-layer {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, .1), var(--my-magenta));
+    background: linear-gradient(rgba(0, 0, 0, .1), var(--my-black));
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -242,57 +253,81 @@ span {
     transform: translateY(100%);
     transition: .5s ease;
     padding: 2rem;
+    color: var(--my-white);
 }
 
-.portfolio-title {
+.stuff-title {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     height: 100%;
+    margin-right: 4rem;
+    max-width: 35vw;
+
 }
 
-.portfolio-title h4 {
+.stuff-title h4 {
     font-size: 4vw;
     margin-bottom: 10rem;
+    text-align: center;
+
 }
 
-.portfolio-title .portfolio-tech-links {
+.stuff-tech-links {
+    width: 100%;
     font-size: 3.2rem;
+    display: flex;
+    justify-content: space-around;
 }
 
-.portfolio-resume {
+.stuff-tech-links i {
+    color: var(--my-black);
+}
+
+
+.stuff-resume {
     font-size: 2vw;
     font-weight: bolder;
     margin: .3rem 0 1rem;
 }
 
-.portfolio-description {
-    font-size: 1.7vw;
+.stuff-description {
+    font-size: 1.5vw;
     margin: .3rem 0 1rem;
 }
 
-.portfolio-box:hover .portfolio-layer {
+.stuff-box:hover .stuff-layer {
     transform: translateY(0);
 }
 
-.portfolio-layer .btn {
-    font-size: 2rem;
+.stuff-layer .btn {
+    font-size: 1.6vw;
     color: var(--my-black);
     background-color: var(--my-white);
 }
 
-.portfolio-layer .btn:hover {
+.stuff-layer .btn:hover {
     box-shadow: 0 0 4rem var(--my-white);
 }
 
-.portfolio-layer .btn:active {
+.stuff-layer .btn:active {
     background-color: var(--my-black);
     color: var(--my-white);
 }
 
+
+svg {
+    width: 64px;
+}
+
+.contact {
+    height: 100vh;
+}
+
 .contact h2 {
     margin-bottom: 10rem;
+    height: 15vh;
 }
 
 form {
@@ -378,6 +413,10 @@ form input {
     html {
         font-size: 70%;
     }
+
+    svg {
+        width: 48px;
+    }
 }
 
 @media (max-width: 1200px) {
@@ -389,6 +428,10 @@ form input {
 @media (max-width: 991px) {
     html {
         font-size: 60%;
+    }
+
+    svg {
+        width: 36px;
     }
 
     .header {
@@ -404,7 +447,7 @@ form input {
 
     }
 
-    .portfolio {
+    .stuff {
         padding-bottom: 7rem;
     }
 
@@ -478,7 +521,7 @@ form input {
         margin-bottom: 3rem;
     }
 
-    .portfolio h2 {
+    .stuff h2 {
         margin-bottom: 3rem;
     }
 
@@ -491,6 +534,10 @@ form input {
         font-size: 50%;
     }
 
+    svg {
+        width: 24px;
+    }
+
     .contact form .input-box input {
         width: 100%;
     }
@@ -499,6 +546,11 @@ form input {
 @media (max-width: 365px) {
     html {
         font-size: 40%;
+    }
+
+
+    svg {
+        width: 24px;
     }
 
     .photo {

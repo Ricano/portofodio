@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'main.apps.MainConfig',
-    'graffiti.apps.GraffitiConfig',
+    'apps.main.apps.MainConfig',
+    'apps.graffiti.apps.GraffitiConfig',
 ]
 
 MIDDLEWARE = [

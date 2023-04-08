@@ -1,20 +1,35 @@
-{#{% extends 'base.html' %}#}
-{##}
-{#{% block youtube %}#}
-{##}
-{#      <div id="youtube">#}
-{#            <form id="youtube-form" action="{% url "youtube" %}" method="post">#}
-{#                {% csrf_token %}#}
-{#                <div id="youtube-form-group" class="form-group">#}
-{#                    <label for="text">Text:</label>#}
-{#                    <textarea class="form-control" id="text" name="text"></textarea>#}
-{#                </div>#}
-{#                <button id="youtube-submit-button" type="submit" class="btn btn-primary">Post Text</button>#}
-{#            </form>#}
-{#            <div id="youtube-result">#}
-{#                <img src="" id="youtube-thumbnail" alt="Image Placeholder">#}
-{#            </div>#}
-{#        </div>#}
-{##}
-{#{% endblock %}#}
-{##}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'youtube/css/styles.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {#Box icons#}
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+</head>
+<body>
+
+
+<div id="youtube">
+    <form id="youtube-form" action="{% url "youtube" %}" method="post">
+        {% csrf_token %}
+        <div id="youtube-form-group" class="form-group">
+            <label for="text">Text:</label>
+            <textarea class="form-control" id="text" name="text"></textarea>
+        </div>
+        <button id="youtube-submit-button" type="submit" class="btn btn-primary">Post Text</button>
+    </form>
+    <div id="youtube-result">
+        <img src="{% static "/images/youtube.png" %}" id="youtube-thumbnail" alt="Image Placeholder">
+    </div>
+</div>
+
+
+</body>
+</html>
