@@ -7,29 +7,64 @@
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'youtube/css/styles.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    {#Box icons#}
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-
 </head>
 <body>
 
+<header class="header">
+    YouTube Downloader
+</header>
 
-<div id="youtube">
-    <form id="youtube-form" action="{% url "youtube" %}" method="post">
-        {% csrf_token %}
-        <div id="youtube-form-group" class="form-group">
-            <label for="text">Text:</label>
-            <textarea class="form-control" id="text" name="text"></textarea>
+
+<section id="yt">
+
+    <form id="yt-form" action="{% url "youtube" %}" method="post">
+        <div class="errors">
+            <div class="error-link">
+                {{ error.link }}
+            </div>
+            <div class="error-message">
+                {{ error.message }}
+            </div>
         </div>
-        <button id="youtube-submit-button" type="submit" class="btn btn-primary">Post Text</button>
-    </form>
-    <div id="youtube-result">
-        <img src="{% static "/images/youtube.png" %}" id="youtube-thumbnail" alt="Image Placeholder">
-    </div>
-</div>
 
+        {% csrf_token %}
+        {{ form }}
+
+        <div class="buttons">
+            <button id="yt-form-go" type="submit" class="btn" formnovalidate>Go</button>
+        </div>
+        <div id="results">
+            <div id="attribs">
+                <div id="title">
+                    {{ video.title }}
+                </div>
+                <div id="details">
+                    <div id="length">
+                        {{ video.length }}
+                    </div>
+                    <div id="author">
+                        {{ video.author }}
+                    </div>
+                </div>
+            </div>
+
+            <div id="thumbnail">
+                <img src="{{ video.thumbnail_url }}" alt="">
+            </div>
+        </div>
+
+
+    </form>
+    <div id="options">
+        <form id="download-form" action="{% url "download" %}" method="post">
+            {% csrf_token %}
+            {{ form2 }}
+        </form>
+
+
+    </div>
+
+</section>
 
 </body>
 </html>

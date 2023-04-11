@@ -21,6 +21,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
 
     path("", include("apps.main.urls")),
-    path("graffiti", include("apps.graffiti.urls")),
-    path("youtube", include("apps.youtube.urls")),
+    path("graffiti/", include("apps.graffiti.urls")),
+    path("youtube/", include("apps.youtube.urls")),
 ]

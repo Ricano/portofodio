@@ -64,6 +64,14 @@ const typed = new Typed(".multiple-text", {
     loop: true,
     showCursor: false
 })
+const typed2 = new Typed(".multiple-tech", {
+        strings: ["stuff", "poop", "nothing"],
+        typeSpeed: 100,
+        backSpeed: 100,
+        backDelay: 1000,
+        loop: true,
+        showCursor: false
+    })
 
 
 // Kaboom

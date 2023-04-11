@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.main.apps.MainConfig',
     'apps.graffiti.apps.GraffitiConfig',
+    'apps.youtube.apps.YoutubeConfig',
 ]
 
 MIDDLEWARE = [

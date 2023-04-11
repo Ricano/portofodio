@@ -212,7 +212,6 @@ span {
 
 .stuff-container:nth-child(3) {
     flex-direction: row-reverse;
-    background-color: var(--my-magenta);
 }
 
 .stuff-box {
@@ -279,6 +278,9 @@ span {
     font-size: 3.2rem;
     display: flex;
     justify-content: space-around;
+    background-color: var(--my-magenta);
+padding: 1rem;
+    border-radius: 20px;
 }
 
 .stuff-tech-links i {
@@ -430,10 +432,6 @@ form input {
         font-size: 60%;
     }
 
-    svg {
-        width: 36px;
-    }
-
     .header {
         padding: 2rem 3%;
     }
@@ -524,19 +522,13 @@ form input {
     .stuff h2 {
         margin-bottom: 3rem;
     }
-
-
 }
-
 
 @media (max-width: 450px) {
     html {
         font-size: 50%;
     }
 
-    svg {
-        width: 24px;
-    }
 
     .contact form .input-box input {
         width: 100%;
@@ -548,10 +540,6 @@ form input {
         font-size: 40%;
     }
 
-
-    svg {
-        width: 24px;
-    }
 
     .photo {
         width: 90vw;
@@ -571,187 +559,3 @@ form input {
     }
 }
 
-
-/*@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Creepster&family=Emilys+Candy&family=Gruppo&family=Henny+Penny&family=Monoton&family=Permanent+Marker&family=Rye&display=swap');*/
-
-/*:root {*/
-/*    --my-black: #181818;*/
-/*    --my-darker_blue: #002439;*/
-/*    --my-dark-blue: #005066;*/
-/*    --my-grey: #4e7988;*/
-/*    --my-magenta: #78cce2;*/
-/*    --my-white: #e4eff0;*/
-/*}*/
-
-
-/*!* Extra small devices (phones, 600px and down) *!*/
-/*@media only screen and (max-width: 600px) {*/
-/*    * {*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    box-sizing: border-box;*/
-/*}*/
-
-/*!* Set background color *!*/
-/*body {*/
-/*    background-color: var(--my-black);*/
-/*    color: var(--my-white);*/
-/*    margin: auto;*/
-
-/*}*/
-
-/*!* Set font *!*/
-/*body, h1, h2, h3, h4, h5, h6 {*/
-/*    font-family: 'Roboto', sans-serif;*/
-
-/*}*/
-
-/*!* Set header and nav styles *!*/
-/*header {*/
-/*    padding: 20px;*/
-/*}*/
-
-/*nav ul {*/
-/*    list-style-type: none;*/
-/*    margin: 0;*/
-/*    padding: 0;*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*}*/
-
-/*nav ul li {*/
-/*    margin: 0 10px;*/
-/*}*/
-
-/*nav ul li a {*/
-/*    color: var(--my-white);*/
-/*    text-decoration: none;*/
-/*}*/
-
-/*nav ul li a:hover {*/
-/*    color: var(--my-magenta);*/
-/*}*/
-
-/*main {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: center;*/
-/*    align-items: center;*/
-/*    max-width: 1080px;*/
-/*    margin: auto;*/
-/*    border: 1px solid yellow;*/
-/*}*/
-
-/*!* Set section styles *!*/
-/*section {*/
-/*    padding: 50px;*/
-/*    border: 1px solid var(--my-grey);*/
-/*    margin-bottom: 10px;*/
-/*    display: flex;*/
-/*}*/
-
-
-/*section p {*/
-/*    line-height: 1.5;*/
-/*    border: 1px solid var(--my-grey);*/
-/*    margin: 10px;*/
-/*}*/
-
-/*!* Set footer styles *!*/
-/*footer {*/
-/*    padding: 20px;*/
-/*    text-align: center;*/
-/*}*/
-
-/*#my-photo {*/
-/*    max-height: 200px;*/
-/*    border-radius: 100px;*/
-/*    border: 1px solid var(--my-grey);*/
-/*    margin: 10px;*/
-
-/*}*/
-
-/*#about-text {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    justify-content: space-around;*/
-
-/*}*/
-
-/*#about-text h2 {*/
-/*    margin-bottom: 20px;*/
-
-/*}*/
-/*#about-text h3 {*/
-/*    margin-bottom: 20px;*/
-
-/*}*/
-
-/*!*Contact Form*!*/
-
-/*!* Form container *!*/
-
-/*!* Form input fields *!*/
-/*#id_email, #id_message {*/
-/*  background-color: #000;*/
-/*  border: none;*/
-/*  border-radius: 10px;*/
-/*  color: #fff;*/
-/*  font-size: 16px;*/
-/*  height: 40px;*/
-/*  margin-bottom: 20px;*/
-/*  padding: 10px;*/
-/*  width: 100%;*/
-/*}*/
-
-
-/*!* Error message *!*/
-/*#error-message {*/
-/*  color: red;*/
-/*  font-size: 14px;*/
-/*  margin-top: 5px;*/
-/*}*/
-
-
-/*!*End Contact Form*!*/
-
-
-/*!*LINKS*!*/
-/*a:link, a:visited, a:active  {*/
-/*  color: yellow;*/
-/*  background-color: transparent;*/
-/*  text-decoration: none;*/
-/*}*/
-
-
-/*a:hover {*/
-/*  color: var(--my-darker_blue);*/
-/*  background-color: transparent;*/
-/*  text-decoration: none;*/
-/*}*/
-
-
-/*!*YOUTUBE*!*/
-/*#youtube {*/
-/*    align-items: center;*/
-/*}*/
-/*#youtube-form {}*/
-/*#youtube-form-group {}*/
-/*#text {}*/
-/*#youtube-submit-button {}*/
-/*#youtube-result {}*/
-
-
-/*}*/
-
-/*!* Small devices (portrait tablets and large phones, 600px and up) *!*/
-/*@media only screen and (min-width: 600px) {}*/
-
-/*!* Medium devices (landscape tablets, 768px and up) *!*/
-/*@media only screen and (min-width: 768px) {}*/
-
-/*!* Large devices (laptops/desktops, 992px and up) *!*/
-/*@media only screen and (min-width: 992px) {}*/
-
-/*!* Extra large devices (large laptops and desktops, 1200px and up) *!*/
-/*@media only screen and (min-width: 1200px) {}*/

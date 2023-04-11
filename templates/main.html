@@ -48,19 +48,19 @@
             <div class="stuff-container">
                 <div class="stuff-title">
                     <h4>{{ project.title }}</h4>
-{#                    <div class="stuff-tech-links">#}
-{#                        {% for link in project.tech_links.all %}#}
-{#                            <a target="_blank" href="{{ link.text }}">#}
-{#                                <svg xmlns="http://www.w3.org/2000/svg" width="36" viewBox="0 0 24 24"#}
-{#                                     style="fill: rgba(200, 0, 0, 1);transform: ;msFilter:;">#}
-{#                                    <path d="{{ link.icon }}"></path>#}
-{##}
-{#                                </svg>#}
-{##}
-{##}
-{#                            </a>#}
-{#                        {% endfor %}#}
-{#                    </div>#}
+                    <div class="stuff-tech-links">
+                        {% for link in project.tech_links.all %}
+
+                            <a target="_blank" href="{{ link.text }}">
+                            {% if  link.name == "godot" or link.name == "photoshop" or link.name == "xd" %}
+                                <img style="width: 3rem" src="{{ link.icon }}" alt="godot image">
+                                {% else %}
+                                <i class="{{ link.icon }}"></i>
+
+                            {% endif %}
+                            </a>
+                        {% endfor %}
+                    </div>
                 </div>
 
                 <div class="stuff-box">

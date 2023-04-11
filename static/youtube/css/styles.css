@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --my-white: #DDEEFF
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+
+}
+
+
+html {
+    font-size: 90%;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+    background-color: black;
+    color: var(--my-white);
+}
+
+header {
+    text-align: center;
+    padding: 2rem;
+    font-size: 4rem;
+    margin-bottom: 10vh;
+    border-bottom: 1px solid var(--my-white);
+
+}
+
+#yt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+form {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+}
+
+input {
+    color: var(--my-white);
+    background-color: transparent;
+    font-size: 1.8rem;
+    border-bottom: 1px solid var(--my-white);
+    width: 100%;
+    margin-bottom: 3rem;
+    padding: 0.5rem;
+    max-width: 768px;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.btn {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 0.6rem;
+    border-radius: 5px;
+
+}
+
+
+.btn:not(:disabled):hover {
+    transform: scale(1.2);
+}
+
+#yt-form-go {
+    background-color: lawngreen;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    color: red;
+}
+
+#results {
+    padding-top: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+#attribs {
+    width: 65%;
+    padding: 1rem;
+}
+
+#title {
+    font-size: 1.4rem;
+}
+
+#details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#author {
+    font-size: 1.6rem;
+    text-align: right;
+}
+
+#length {
+    font-size: 1.4rem;
+}
+
+#thumbnail {
+    width: 35%;
+
+}
+
+img {
+    width: 100%;
+    padding: 1rem;
+}
+
+#download-form{
+background-color: pink;
+
+}
