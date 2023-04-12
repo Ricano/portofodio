@@ -15,4 +15,4 @@ class YouTubeForm(forms.Form):
 
 
 class DownloadForm(forms.Form):
-    audio_only = forms.CharField(widget=forms.RadioSelect(choices=(('yes','YES'),('yeaas','YESaa'),('no','NO'))))
+    stream = forms.CharField(widget=forms.RadioSelect(choices=(('yes','YES'),('yeaas','YESaa'),('no','NO'))))

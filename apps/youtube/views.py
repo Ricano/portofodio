@@ -1,7 +1,6 @@
 import datetime
 
-from django.http import JsonResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.views import View
 from django.views.generic import TemplateView
 from pytube import YouTube
@@ -25,6 +24,16 @@ class YoutubeView(TemplateView):
         if form.is_valid():
             try:
                 yt = YouTube(link)
+                stream_choices = []
+                for stream in yt.fmt_streams:
+                    if stream.type == "audio":
+                        stream_choices.append([stream.mime_type, f"{stream.abr} - {stream.audio_codec}"])
+                    else:
+                        stream_choices.append([stream.mime_type, f"{stream.resolution} - {stream.video_codec}"])
+
+                form2 = DownloadForm(request.POST)
+                form2.fields["stream"].widget.choices = stream_choices
+                context["form2"] = form2
                 context["video"] = {
                     "title": yt.title,
                     "author": yt.author,
@@ -33,19 +42,21 @@ class YoutubeView(TemplateView):
                 }
             except RegexMatchError:
                 context["error"] = {
-                    "link": '"' + link + '"',
+                    "link": link,
                     "message": "does not appear to be a valid link"
                 }
             except PytubeError as e:
                 context["error"] = {
-                    "link": e.__context__,
+                    "link": e,
                     "message": "Pytube error"
                 }
             except Exception as e:
                 context["error"] = {
-                    "link": e.__context__,
+                    "link": e,
                     "message": "Unhandled exception error"
                 }
+
+
         return render(request, "youtube.html", context=context)
 
 class DownloadView(View):
