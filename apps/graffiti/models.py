@@ -46,9 +46,6 @@ class Graffiti(models.Model):
 
 
 class GraffitiForm(forms.Form):
-
-
-
     text = forms.CharField(widget=forms.Textarea(attrs={"cols": "30", "rows": "8", "placeholder": "Your message"}), label="",max_length=64)
     author = forms.CharField(widget=forms.TextInput(attrs={"placeholder": "Your name"}), label="", max_length=30)
     font = forms.ChoiceField(choices=Font.choices, label="")
