@@ -39,7 +39,7 @@
     <div class="modal-content">
 
         <div class="modal-body">
-            <form action="/graffiti" method="post" id="graffiti-form">
+            <form action="{% url "graffiti" %}" method="post" id="graffiti-form">
                 {% csrf_token %}
                 <div id="text-counter">64/64</div>
 
@@ -51,7 +51,7 @@
 
 
             <!-- External button-->
-            <button id="submit-btn" type="submit" form="graffiti-form"> OK</button>
+            <button id="submit-btn" type="submit" form="graffiti-form">OK</button>
 
 
         </div>
