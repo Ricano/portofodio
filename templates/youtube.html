@@ -13,7 +13,11 @@
 <header class="header">
     YouTube Downloader
 </header>
+<div id="loader">
 
+    <div id="spinner">
+    </div>
+</div>
 
 <section id="yt">
 
@@ -56,15 +60,19 @@
 
     </form>
     <div id="options">
-        <form id="download-form" action="{% url "download" %}" method="post">
+        <form id="download-form" action="{% url "youtube" %}" method="post">
             {% csrf_token %}
             {{ form2 }}
+            <button id="yt-form-download" type="submit" class="btn" formnovalidate>Download</button>
         </form>
 
 
     </div>
 
 </section>
+
+<script src="{% static "youtube/js/youtube.js" %}"></script>
+
 
 </body>
 </html>

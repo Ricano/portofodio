@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'youtube/css/styles.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<header class="header">
+    YouTube Downloader
+</header>
+
+
+<section id="success">
+    <p>
+        Your download is complete.
+    </p>
+    <div class="buttons">
+        <button id="yt-form-go" class="btn"><a href="{% url "youtube" %}">Back to Main</a></button>
+    </div>
+</section>
+
+
+</body>
+</html>
