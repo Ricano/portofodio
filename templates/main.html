@@ -20,7 +20,9 @@
         <div class="home-content">
             <h3>...</h3>
             <h1>R Caetano</h1>
-            <h3>And I do <span class="multiple-text"></span></h3>
+            {#            <h3><span class="multiple-text"></span></h3>#}
+
+
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam architecto aut cupiditate ea ipsa
                 laborum
                 nisi non odio optio quae, quisquam quo repudiandae rerum saepe sint suscipit unde vel. Quidem.</p>
@@ -48,19 +50,12 @@
             <div class="stuff-container">
                 <div class="stuff-title">
                     <h4>{{ project.title }}</h4>
-                    <div class="stuff-tech-links">
-                        {% for link in project.tech_links.all %}
-
-                            <a target="_blank" href="{{ link.text }}">
-                            {% if  link.name == "godot" or link.name == "photoshop" or link.name == "xd" %}
-                                <img style="width: 3rem" src="{{ link.icon }}" alt="godot image">
-                                {% else %}
-                                <i class="{{ link.icon }}"></i>
-
-                            {% endif %}
-                            </a>
-                        {% endfor %}
-                    </div>
+                    <p class="stuff-resume">
+                        {{ project.resume }}
+                    </p>
+                    <p class="stuff-description">
+                        {{ project.description }}
+                    </p>
                 </div>
 
                 <div class="stuff-box">
@@ -70,21 +65,24 @@
 
                     <div class="stuff-layer">
 
-                        <p class="stuff-resume">
-                            {{ project.resume }}
-                        </p>
-                        <p class="stuff-description">
-                            {{ project.description }}
-                        </p>
-                        <a class="btn" target="_blank" href={{ project.link }}>check it out
-                        </a>
 
+                        <a class="btn" target="_blank" href={{ project.link }}>Live Demo
+                        </a>
+                        <a class="btn" target="_blank" href=#>View on GitHub
+                        </a>
 
                     </div>
 
                 </div>
 
+                <div class="stuff-tech-links">
+                    {% for link in project.tech_links.all %}
 
+                        <a target="_blank" href="{{ link.text }}">
+                            <img src="{{ link.icon }}" alt="tech image">
+                        </a>
+                    {% endfor %}
+                </div>
             </div>
         {% endfor %}
 
@@ -113,6 +111,32 @@
 
         </div>
     </footer>
+            <div id='kitt'>:
+                <div class='one'>
+                    <div class="led"></div>
+                </div>
+                <div class='two'>
+                    <div class="led"></div>
+                </div>
+                <div class='three'>
+                    <div class="led"></div>
+                </div>
+                <div class='four'>
+                    <div class="led"></div>
+                </div>
+                <div class='five'>
+                    <div class="led"></div>
+                </div>
+                <div class='six'>
+                    <div class="led"></div>
+                </div>
+                <div class='seven'>
+                    <div class="led"></div>
+                </div>
+                <div class='eight'>
+                    <div class="led"></div>
+                </div>:
+            </div>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://unpkg.com/typed.js@2.0.14/dist/typed.umd.js"></script>
