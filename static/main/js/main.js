@@ -80,10 +80,9 @@ function create() {
 }
 
 function kaboom() {
-// Get all elements on the page
+// Get all-ish elements on the page
 
-// Select specific types of elements using a CSS selector
-    const elements = document.querySelectorAll('footer, p, section, img, h3, h2, h1, a, i, span');
+    const elements = document.querySelectorAll('footer, p, section, img, h3, h2, h1, a, i, span, #kitt');
 
 // Loop through each element and set its position to absolute
     for (let i = 0; i < elements.length; i++) {
